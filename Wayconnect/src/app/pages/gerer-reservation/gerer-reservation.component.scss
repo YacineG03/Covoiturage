@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+  }
+  
+  header img {
+    margin-right: 50px;
+    width: 5%;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    height: auto;
+  }
+
+  .reservation-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .reservation-details {
+    margin-bottom: 10px;
+  }
+  
+  .reservation-actions {
+    margin-top: 10px;
+  }
+  
+  .button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button-accept {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .button-delete {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  
+  

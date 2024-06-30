@@ -1,0 +1,45 @@
+<div class="container">
+  <header>
+    <img src="../../assets/images/itineraire.png" alt="trajet">
+    <h1>Rechercher des Courses</h1>
+  </header>
+  <br><br><br>
+  <main>
+    <section class="formulaire">
+      <form (ngSubmit)="rechercherCourses()" [formGroup]="formGroup">
+        <div class="container-trajet">
+          <div class="Trajet">
+            <img src="../../assets/images/broche.png" alt="trajet">
+            <div class="inputs">
+              <input type="text" id="depart" formControlName="depart" placeholder="Point de départ">
+              <hr><br>
+              <input type="text" id="arrivee" formControlName="arrivee" placeholder="Point d'arrivée">
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="container-boutons">
+          <button type="submit">Rechercher des Courses</button><br><br>
+          <button type="reset" (click)="clearForm()">Annuler</button>
+        </div>
+      </form>
+    </section>
+    <section class="resultats">
+      <div *ngIf="message">{{ message }}</div>
+      <div *ngIf="coursesDisponibles.length > 0">
+        <h2>Courses disponibles:</h2>
+        <ul>
+          <li *ngFor="let course of coursesDisponibles">
+            <strong>Date:</strong> {{ course.Date | date:'mediumDate' }}<br>
+            <strong>Heure:</strong> {{ course.Heure | date:'shortTime' }}<br>
+            <strong>Départ:</strong> {{ course.Depart }}<br>
+            <strong>Arrivée:</strong> {{ course.Arrivee }}<br>
+            <strong>Sièges disponibles:</strong> {{ course.SiegesDisponibles }}<br>
+            <strong>Conducteur:</strong> {{ course.PrenomConducteur }} {{ course.NomConducteur }}<br>
+            <button (click)="faireReservation(authService.getUserEmail(),course.id)">Réserver</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
